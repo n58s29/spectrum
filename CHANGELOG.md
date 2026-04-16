@@ -5,6 +5,13 @@ Format : [Conventional Commits](https://www.conventionalcommits.org/fr/) — `fe
 
 ---
 
+## [0.1.1] — 2026-04-16
+
+### fix
+- Fond flou persistant après ajout d'une prestation au devis : `[hidden]` était écrasé par `display: flex` de `.modal-overlay`. Ajout de `[hidden] { display: none !important }` dans le reset CSS.
+
+---
+
 ## [0.1.0] — 2026-04-16 — MVP
 
 ### feat
