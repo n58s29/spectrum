@@ -1,0 +1,193 @@
+@media print {
+  /* === Masquer les éléments non imprimables === */
+  .nav,
+  .nav-spacer,
+  .sidebar,
+  .btn-primaire,
+  .btn-secondaire,
+  .btn-tertiaire,
+  .btn-danger,
+  .modal-overlay,
+  .toast,
+  footer,
+  .section-catalogue,
+  .section-infos-form,
+  .filtres-catalogue,
+  .filet-fan {
+    display: none !important;
+  }
+
+  /* === Mise en page impression === */
+  body {
+    background: white;
+    color: #000;
+    font-size: 11pt;
+    font-family: Arial, sans-serif;
+  }
+
+  .layout-app {
+    display: block;
+  }
+
+  .contenu-principal {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* === En-tête du devis === */
+  .print-entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #001b44;
+  }
+
+  .print-logo-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .print-outil-nom {
+    font-size: 22pt;
+    font-weight: bold;
+    color: #001b44;
+    letter-spacing: -0.02em;
+  }
+
+  .print-fan-label {
+    font-size: 9pt;
+    color: #44474e;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .print-date {
+    font-size: 9pt;
+    color: #44474e;
+    text-align: right;
+  }
+
+  /* === Infos devis === */
+  .print-infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f7f9ff;
+  }
+
+  .print-info-bloc h4 {
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #44474e;
+    margin-bottom: 0.25rem;
+  }
+
+  .print-info-bloc p {
+    font-size: 11pt;
+    font-weight: normal;
+    color: #181c20;
+  }
+
+  /* === Tableau des lignes === */
+  .print-tableau {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    font-size: 10pt;
+  }
+
+  .print-tableau th {
+    background: #001b44;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .print-tableau td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #dfe3e8;
+    vertical-align: top;
+  }
+
+  .print-tableau tr:nth-child(even) td {
+    background: #f7f9ff;
+  }
+
+  .print-tableau .col-prix {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* === Totaux === */
+  .print-totaux {
+    width: 300px;
+    margin-left: auto;
+    font-size: 10pt;
+  }
+
+  .print-totaux tr td:first-child {
+    color: #44474e;
+  }
+
+  .print-totaux tr td:last-child {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .print-totaux .ligne-ttc td {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #001b44;
+    border-top: 2px solid #001b44;
+    padding-top: 0.5rem;
+  }
+
+  /* === Notes === */
+  .print-notes {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f7f9ff;
+    font-size: 10pt;
+  }
+
+  .print-notes h4 {
+    font-size: 8pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #44474e;
+    margin-bottom: 0.5rem;
+  }
+
+  /* === Pied de page === */
+  .print-pied {
+    position: fixed;
+    bottom: 1cm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #44474e;
+    border-top: 1px solid #dfe3e8;
+    padding-top: 0.5rem;
+  }
+
+  /* === Sauts de page === */
+  .print-saut { page-break-after: always; }
+
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+}

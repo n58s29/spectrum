@@ -1,0 +1,166 @@
+/* ========================================
+   BROUILLONS — Page styles
+   ======================================== */
+
+.brouillons-hero {
+  background: linear-gradient(135deg, var(--primaire), var(--primaire-conteneur));
+  padding: 3rem 2.5rem;
+  position: relative;
+}
+
+.brouillons-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cerulean), var(--ambre), var(--menthe));
+}
+
+.brouillons-hero-titre {
+  font-family: var(--police-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--sur-primaire);
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+}
+
+.brouillons-hero-sous-titre {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+  margin-top: 0.5rem;
+}
+
+/* === Zone principale === */
+
+.brouillons-zone {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2.5rem;
+}
+
+/* === Barre d'actions === */
+
+.brouillons-barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.brouillons-compteur {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-surface-secondaire);
+}
+
+/* === Tableau des brouillons === */
+
+.tableau-brouillons {
+  background: var(--surface-flottante);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.tableau-brouillons .tableau {
+  table-layout: fixed;
+}
+
+.tableau-brouillons .tableau th:nth-child(1) { width: 30%; }
+.tableau-brouillons .tableau th:nth-child(2) { width: 22%; }
+.tableau-brouillons .tableau th:nth-child(3) { width: 15%; }
+.tableau-brouillons .tableau th:nth-child(4) { width: 13%; }
+.tableau-brouillons .tableau th:nth-child(5) { width: 10%; }
+.tableau-brouillons .tableau th:nth-child(6) { width: 10%; }
+
+.col-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.col-nom {
+  font-weight: 400;
+  color: var(--sur-surface);
+}
+
+.col-montant {
+  font-weight: 500;
+  color: var(--primaire);
+  font-family: var(--police-display);
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.col-date {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-surface-secondaire);
+}
+
+/* === Confirmation de suppression === */
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 27, 68, 0.5);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.confirm-boite {
+  background: var(--surface-flottante);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 24px 64px rgba(0, 27, 68, 0.2);
+}
+
+.confirm-titre {
+  font-family: var(--police-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primaire);
+  margin-bottom: 0.75rem;
+}
+
+.confirm-texte {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--sur-surface-secondaire);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.btn-supprimer-confirm {
+  background: var(--ocre);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.625rem 1.25rem;
+  font-family: var(--police-corps);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-supprimer-confirm:hover { opacity: 0.88; }
+
+@media (max-width: 768px) {
+  .brouillons-zone { padding: 1.5rem 1.25rem; }
+  .tableau-brouillons { overflow-x: auto; }
+  .tableau-brouillons .tableau { min-width: 600px; }
+  .brouillons-barre { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

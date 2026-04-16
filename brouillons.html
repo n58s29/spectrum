@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPECTRUM — Mes brouillons</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/brouillons.css">
+  <link rel="stylesheet" href="print.css">
+</head>
+<body data-page="brouillons">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand" style="text-decoration:none">
+      <span class="nav-brand-nom">SPECTRUM</span>
+      <span class="nav-brand-label">Fabrique de l'Adoption Numérique</span>
+    </a>
+    <ul class="nav-liens">
+      <li><a href="index.html"      class="nav-lien">Catalogue</a></li>
+      <li><a href="devis.html"      class="nav-lien">Nouveau devis</a></li>
+      <li><a href="brouillons.html" class="nav-lien actif">Mes brouillons</a></li>
+    </ul>
+  </nav>
+  <div class="nav-spacer"></div>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="brouillons-hero">
+    <span class="eyebrow" style="color:var(--bleu-horizon)">
+      <span class="point-vivant"></span>
+      SPECTRUM — Mes devis
+    </span>
+    <h1 class="brouillons-hero-titre">Mes brouillons</h1>
+    <p class="brouillons-hero-sous-titre">
+      Reprenez, dupliquez ou supprimez vos devis sauvegardés.
+    </p>
+  </header>
+
+  <!-- ═══ ZONE PRINCIPALE ═══ -->
+  <div class="brouillons-zone">
+
+    <!-- Barre d'actions -->
+    <div class="brouillons-barre">
+      <span class="brouillons-compteur" id="brouillons-compteur">— brouillon</span>
+      <button id="btn-nouveau-devis-brouillons" class="btn-primaire">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
+          <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Nouveau devis
+      </button>
+    </div>
+
+    <!-- Tableau des brouillons -->
+    <div id="tableau-zone" class="tableau-brouillons">
+      <table class="tableau">
+        <thead>
+          <tr>
+            <th>Nom du devis</th>
+            <th>Direction / Entité</th>
+            <th>Dernière modification</th>
+            <th>Montant estimé</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="brouillons-tbody">
+          <!-- Rendu dynamique par app.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- État vide -->
+    <div id="etat-vide-zone" class="etat-vide" hidden>
+      <span class="etat-vide-icone">◻</span>
+      <div class="etat-vide-titre">Aucun brouillon sauvegardé</div>
+      <p class="etat-vide-texte">
+        Vos devis sauvegardés apparaîtront ici. Commencez par créer votre premier devis.
+      </p>
+      <a href="devis.html" class="btn-primaire">Créer un devis</a>
+    </div>
+
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-titre">Fabrique de l'Adoption Numérique</div>
+    <div class="footer-sous-titre">e.SNCF Solutions — Direction Numérique Groupe SNCF</div>
+    <div class="footer-filet"></div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPECTRUM — Configurateur de devis</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/devis.css">
+  <link rel="stylesheet" href="print.css">
+</head>
+<body data-page="devis">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand" style="text-decoration:none">
+      <span class="nav-brand-nom">SPECTRUM</span>
+      <span class="nav-brand-label">Fabrique de l'Adoption Numérique</span>
+    </a>
+    <ul class="nav-liens">
+      <li><a href="index.html"      class="nav-lien">Catalogue</a></li>
+      <li><a href="devis.html"      class="nav-lien actif">Nouveau devis</a></li>
+      <li><a href="brouillons.html" class="nav-lien">Mes brouillons</a></li>
+    </ul>
+  </nav>
+  <div class="nav-spacer"></div>
+
+  <!-- ═══ LAYOUT APPLICATIF 1/3 + 2/3 ═══ -->
+  <div class="layout-app" style="min-height:calc(100vh - 64px)">
+
+    <!-- ─── SIDEBAR RÉCAPITULATIF (1/3) ─── -->
+    <aside class="sidebar sidebar-recap">
+
+      <!-- En-tête recap -->
+      <div class="recap-entete">
+        <div class="recap-eyebrow">
+          <span class="eyebrow">
+            <span class="point-vivant"></span>
+            Récapitulatif du devis
+          </span>
+        </div>
+        <input type="text" id="recap-nom-devis" class="recap-nom-devis"
+          placeholder="Nom du devis…"
+          maxlength="80"
+          autocomplete="off">
+        <div class="recap-direction" id="recap-direction">Direction non renseignée</div>
+      </div>
+
+      <!-- Corps — lignes -->
+      <div class="recap-corps" id="recap-lignes-zone">
+        <div class="recap-vide">
+          <span class="recap-vide-icone">◻</span>
+          Aucune prestation sélectionnée.<br>Ajoutez des services ci-contre.
+        </div>
+      </div>
+
+      <!-- Totaux -->
+      <div class="recap-totaux">
+        <div class="recap-ligne-total">
+          <span class="recap-ligne-total-label">Sous-total HT</span>
+          <span class="recap-ligne-total-valeur" id="recap-ht">0 €</span>
+        </div>
+        <div class="recap-ligne-total">
+          <span class="recap-ligne-total-label">TVA (20 %)</span>
+          <span class="recap-ligne-total-valeur" id="recap-tva">0 €</span>
+        </div>
+        <div class="recap-ligne-total ttc">
+          <span class="recap-ligne-total-label">Total TTC</span>
+          <span class="recap-ligne-total-valeur" id="recap-ttc">0 €</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="recap-actions">
+        <button id="btn-export-pdf" class="btn-primaire btn-pleine-largeur" disabled>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
+            <path d="M3 2h7l4 4v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M10 2v4h4M8 9v4M6 11l2 2 2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Exporter en PDF
+        </button>
+        <button id="btn-sauvegarder" class="btn-secondaire btn-pleine-largeur" disabled>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0">
+            <path d="M13 14H3a1 1 0 01-1-1V3a1 1 0 011-1h8l3 3v9a1 1 0 01-1 1z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M10 14v-4H6v4M5 2v3h6V2" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Sauvegarder le brouillon
+        </button>
+        <button id="btn-nouveau-devis" class="btn-tertiaire" style="align-self:center;font-size:0.8125rem">
+          Nouveau devis
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ─── ZONE PRINCIPALE (2/3) ─── -->
+    <main class="contenu-principal" style="padding:0;background:var(--surface-basse)">
+
+      <!-- Section 1 — Informations du devis -->
+      <section class="devis-section" id="section-infos">
+        <div class="devis-section-entete">
+          <div class="devis-section-numero">1</div>
+          <div>
+            <h2 class="devis-section-titre">Informations du devis</h2>
+            <p class="devis-section-sous-titre">Ces informations figureront sur le document exporté.</p>
+          </div>
+        </div>
+
+        <div class="infos-grille">
+          <div class="champ-groupe pleine-largeur">
+            <label class="champ-label" for="champ-direction">Direction / Entité cliente</label>
+            <input type="text" id="champ-direction" class="champ"
+              placeholder="ex. : Direction Régionale Île-de-France…"
+              maxlength="120" autocomplete="organization">
+          </div>
+          <div class="champ-groupe">
+            <label class="champ-label" for="champ-contact">Nom du contact</label>
+            <input type="text" id="champ-contact" class="champ"
+              placeholder="Prénom Nom"
+              maxlength="80" autocomplete="name">
+          </div>
+          <div class="champ-groupe">
+            <label class="champ-label" for="champ-notes">Notes &amp; conditions particulières</label>
+            <textarea id="champ-notes" class="champ" rows="2"
+              placeholder="Informations complémentaires, contraintes…"
+              style="resize:vertical"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Séparateur fond -->
+      <div style="height:2px;background:var(--surface-haute)"></div>
+
+      <!-- Section 2 — Sélection des prestations -->
+      <section class="devis-section" id="section-catalogue" style="background:var(--surface)">
+        <div class="devis-section-entete">
+          <div class="devis-section-numero">2</div>
+          <div>
+            <h2 class="devis-section-titre">Ajouter des prestations</h2>
+            <p class="devis-section-sous-titre">Sélectionnez et configurez les services à inclure dans le devis.</p>
+          </div>
+        </div>
+
+        <!-- Filtres rapides -->
+        <div class="filtres-rapides">
+          <button class="filtre-rapide actif" data-filtre-cat="tous">Tout afficher</button>
+          <button class="filtre-rapide" data-filtre-cat="espaces">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--cerulean)"></span>
+            Espaces
+          </button>
+          <button class="filtre-rapide" data-filtre-cat="genai">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--lavande)"></span>
+            IA Générative
+          </button>
+          <button class="filtre-rapide" data-filtre-cat="experimentation">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--menthe)"></span>
+            Expérimentation
+          </button>
+          <button class="filtre-rapide" data-filtre-cat="innovation">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--ambre)"></span>
+            Innovation
+          </button>
+        </div>
+
+        <!-- Recherche rapide -->
+        <div style="position:relative;margin-bottom:1.25rem">
+          <svg style="position:absolute;left:0.875rem;top:50%;transform:translateY(-50%);opacity:0.5" width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 10l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="search" id="recherche-devis" class="champ"
+            placeholder="Rechercher une prestation…"
+            style="padding-left:2.5rem" autocomplete="off">
+        </div>
+
+        <!-- Catalogue compact -->
+        <div id="catalogue-compact-zone"></div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast (généré dynamiquement par app.js) -->
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+/* ========================================
+   DEVIS — Page styles
+   ======================================== */
+
+/* === Sidebar récapitulatif === */
+
+.sidebar-recap {
+  background: var(--primaire-conteneur);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.recap-entete {
+  padding: 1.75rem 1.5rem 1.25rem;
+  background: var(--primaire);
+}
+
+.recap-eyebrow {
+  margin-bottom: 0.625rem;
+}
+
+.recap-eyebrow .eyebrow {
+  color: var(--bleu-horizon);
+  font-size: 10px;
+}
+
+.recap-nom-devis {
+  font-family: var(--police-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sur-primaire);
+  letter-spacing: -0.01em;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 0.25rem 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.recap-nom-devis:focus {
+  border-bottom-color: var(--ambre);
+}
+
+.recap-nom-devis::placeholder {
+  color: var(--sur-primaire-conteneur);
+  font-style: italic;
+}
+
+.recap-direction {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+  margin-top: 0.5rem;
+}
+
+/* === Lignes du devis === */
+
+.recap-corps {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+}
+
+.recap-vide {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+
+.recap-vide-icone {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  opacity: 0.5;
+}
+
+.recap-lignes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recap-ligne {
+  background: rgba(255,255,255,0.07);
+  border-radius: 0.25rem;
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+}
+
+.recap-ligne-entete {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.recap-ligne-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.recap-ligne-nom {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--sur-primaire);
+  flex: 1;
+  line-height: 1.35;
+}
+
+.recap-ligne-supprimer {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.3);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.recap-ligne-supprimer:hover {
+  color: var(--ocre);
+}
+
+.recap-ligne-detail {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+  padding-left: 1rem;
+}
+
+.recap-ligne-prix {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ambre);
+  text-align: right;
+}
+
+/* === Totaux === */
+
+.recap-totaux {
+  padding: 1rem 1.5rem;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.recap-ligne-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+}
+
+.recap-ligne-total-label {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+}
+
+.recap-ligne-total-valeur {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--sur-primaire-conteneur);
+}
+
+.recap-ligne-total.ttc .recap-ligne-total-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--sur-primaire);
+}
+
+.recap-ligne-total.ttc .recap-ligne-total-valeur {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ambre);
+  letter-spacing: -0.01em;
+}
+
+/* === Actions sidebar === */
+
+.recap-actions {
+  padding: 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.recap-actions .btn-primaire {
+  background: var(--cerulean);
+}
+.recap-actions .btn-primaire:hover {
+  background: #006fa8;
+}
+
+.recap-actions .btn-secondaire {
+  background: rgba(255,255,255,0.1);
+  color: var(--sur-primaire-conteneur);
+}
+.recap-actions .btn-secondaire:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* === Zone principale === */
+
+.devis-section {
+  padding: 2rem 2.5rem;
+  background: var(--surface-flottante);
+  margin-bottom: 0.5rem;
+}
+
+.devis-section-entete {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.devis-section-numero {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primaire);
+  color: var(--sur-primaire);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.devis-section-titre {
+  font-family: var(--police-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primaire);
+  letter-spacing: -0.01em;
+}
+
+.devis-section-sous-titre {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-surface-secondaire);
+  margin-top: 0.25rem;
+}
+
+/* === Form infos === */
+
+.infos-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.infos-grille .pleine-largeur {
+  grid-column: 1 / -1;
+}
+
+/* === Filtres rapides catégories (devis) === */
+
+.filtres-rapides {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filtre-rapide {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--sur-surface-secondaire);
+  background: var(--surface-haute);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filtre-rapide:hover {
+  background: var(--surface-basse);
+  color: var(--sur-surface);
+}
+
+.filtre-rapide.actif {
+  background: var(--primaire);
+  color: var(--sur-primaire);
+}
+
+/* === Carte service compacte (dans devis) === */
+
+.catalogue-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.carte-service-compacte {
+  background: var(--surface-flottante);
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  outline: 1px solid var(--bordure-fantome);
+  transition: background 0.15s, outline-color 0.15s;
+  cursor: default;
+}
+
+.carte-service-compacte:hover {
+  background: var(--surface-basse);
+  outline-color: var(--surface-haute);
+}
+
+.carte-compacte-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.carte-compacte-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.carte-compacte-nom {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--sur-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carte-compacte-meta {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--sur-surface-secondaire);
+}
+
+.carte-compacte-prix {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primaire);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* === Config Modal — Prix calculé === */
+
+.modal-prix-calcule {
+  background: var(--primaire);
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.modal-prix-label {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+}
+
+.modal-prix-valeur {
+  font-family: var(--police-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ambre);
+  letter-spacing: -0.02em;
+}
+
+.modal-prix-ht {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--sur-primaire-conteneur);
+}
+
+/* Séparateur de section dans modal */
+.modal-sep {
+  height: 1px;
+  background: var(--surface-haute);
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 900px) {
+  .infos-grille {
+    grid-template-columns: 1fr;
+  }
+  .infos-grille .pleine-largeur {
+    grid-column: 1;
+  }
+  .devis-section {
+    padding: 1.5rem 1.25rem;
+  }
+  .recap-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

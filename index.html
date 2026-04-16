@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPECTRUM — Catalogue des prestations FAN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/catalogue.css">
+  <link rel="stylesheet" href="print.css">
+</head>
+<body data-page="catalogue">
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand" style="text-decoration:none">
+      <span class="nav-brand-nom">SPECTRUM</span>
+      <span class="nav-brand-label">Fabrique de l'Adoption Numérique</span>
+    </a>
+    <ul class="nav-liens">
+      <li><a href="index.html"     class="nav-lien actif">Catalogue</a></li>
+      <li><a href="devis.html"     class="nav-lien">Nouveau devis</a></li>
+      <li><a href="brouillons.html" class="nav-lien">Mes brouillons</a></li>
+    </ul>
+  </nav>
+  <div class="nav-spacer"></div>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <span class="eyebrow">
+        <span class="point-vivant"></span>
+        SPECTRUM — Fabrique de l'Adoption Numérique
+      </span>
+    </div>
+    <h1 class="hero-titre">Le catalogue des<br>prestations <span>FAN</span></h1>
+    <p class="hero-sous-titre">
+      Espaces de travail, ateliers IA générative, projets expérimentaux, analyses open innovation.
+      Configurez vos prestations et générez un devis en quelques minutes.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-valeur">16</span>
+        <span class="hero-stat-label">Prestations</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-valeur">4</span>
+        <span class="hero-stat-label">Catégories</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-valeur">J+1</span>
+        <span class="hero-stat-label">Délai de réponse</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ CORPS — Filtres + Grille ═══ -->
+  <div class="catalogue-layout">
+
+    <!-- Panneau filtres -->
+    <aside class="filtres-panel">
+      <p class="filtres-titre">Filtres</p>
+
+      <!-- Recherche -->
+      <div class="filtres-section">
+        <div class="filtre-recherche">
+          <svg class="filtre-recherche-icone" width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 10l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="search" id="recherche-catalogue" class="champ"
+            placeholder="Rechercher une prestation…"
+            style="padding-left:2.5rem" autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Catégories -->
+      <div class="filtres-section">
+        <p class="filtres-section-titre">Catégories</p>
+        <ul class="filtres-liste">
+          <li class="filtre-item actif" data-filtre-cat="tous">
+            <span class="filtre-item-dot" style="background:var(--sur-surface-secondaire)"></span>
+            Toutes les prestations
+            <span class="filtre-compteur" id="compteur-tous">16</span>
+          </li>
+          <li class="filtre-item" data-filtre-cat="espaces">
+            <span class="filtre-item-dot filtre-item-dot-cerulean"></span>
+            Location d'espaces
+            <span class="filtre-compteur">4</span>
+          </li>
+          <li class="filtre-item" data-filtre-cat="genai">
+            <span class="filtre-item-dot filtre-item-dot-lavande"></span>
+            Ateliers IA Générative
+            <span class="filtre-compteur">4</span>
+          </li>
+          <li class="filtre-item" data-filtre-cat="experimentation">
+            <span class="filtre-item-dot filtre-item-dot-menthe"></span>
+            Projets expérimentaux
+            <span class="filtre-compteur">4</span>
+          </li>
+          <li class="filtre-item" data-filtre-cat="innovation">
+            <span class="filtre-item-dot filtre-item-dot-ambre"></span>
+            Open Innovation
+            <span class="filtre-compteur">4</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="filtres-section" style="margin-top:2rem;padding-top:1.5rem;background:var(--surface-haute);border-radius:0.25rem;padding:1.25rem">
+        <p class="filtres-section-titre" style="margin-bottom:0.625rem">Besoin d'un conseil ?</p>
+        <p style="font-size:0.8125rem;font-weight:300;color:var(--sur-surface-secondaire);line-height:1.55;margin-bottom:0.875rem">
+          L'équipe FAN vous accompagne pour identifier la prestation adaptée à votre projet.
+        </p>
+        <a href="devis.html" class="btn-primaire btn-pleine-largeur" style="font-size:0.8125rem">
+          Créer un devis
+        </a>
+      </div>
+    </aside>
+
+    <!-- Grille catalogue -->
+    <main class="catalogue-zone" id="catalogue-zone">
+      <div class="catalogue-entete">
+        <h2 class="catalogue-titre">Toutes les prestations</h2>
+        <span class="catalogue-compteur" id="catalogue-compteur">16 prestations</span>
+      </div>
+      <div id="catalogue-grille"></div>
+    </main>
+
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-titre">Fabrique de l'Adoption Numérique</div>
+    <div class="footer-sous-titre">e.SNCF Solutions — Direction Numérique Groupe SNCF</div>
+    <div class="footer-filet"></div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

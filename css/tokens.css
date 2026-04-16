@@ -1,0 +1,38 @@
+:root {
+  /* === Couleurs structurelles === */
+  --primaire: #001b44;
+  --primaire-conteneur: #123062;
+  --sur-primaire: #ffffff;
+  --sur-primaire-conteneur: #d1e0f0;
+
+  /* === Surfaces mode clair === */
+  --surface: #f7f9ff;
+  --surface-basse: #f1f4fa;
+  --surface-haute: #dfe3e8;
+  --surface-flottante: #ffffff;
+  --sur-surface: #181c20;
+  --sur-surface-secondaire: #44474e;
+
+  /* === Surfaces mode sombre === */
+  --sombre-fond: #00205b;
+  --sombre-fond-moyen: #001440;
+  --sombre-fond-profond: #000d2e;
+
+  /* === Accents fonctionnels === */
+  --cerulean: #0088cc;
+  --ambre: #eed484;
+  --menthe: #00b388;
+  --lavande: #8374d1;
+  --ocre: #dc582a;
+  --bourgogne: #651c32;
+  --bleu-horizon: #a4c8e1;
+
+  /* === Fonctionnels === */
+  --succes-fond: #d3e9e5;
+  --ombre-ambiante: rgba(0, 26, 66, 0.06);
+  --bordure-fantome: rgba(116, 119, 128, 0.15);
+
+  /* === Typographie === */
+  --police-display: 'Avenir', 'Avenir Next', sans-serif;
+  --police-corps: 'Avenir', 'Avenir Next', Arial, sans-serif;
+}
