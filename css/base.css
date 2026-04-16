@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+/* Garantit que l'attribut HTML [hidden] l'emporte sur tout display CSS */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
